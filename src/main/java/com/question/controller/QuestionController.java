@@ -3,6 +3,8 @@ package com.question.controller;
 import java.util.Optional;
 import java.util.Set;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +36,7 @@ public class QuestionController {
 	}
 
 	@PostMapping("/question")
-	public ResponseEntity<Question> createQuestion(@RequestBody QuestionForm questionForm) {
+	public ResponseEntity<Question> createQuestion(@Valid @RequestBody QuestionForm questionForm) {
 		// call question service and save it and return id
 		Question save = questionService.saveQuestionForm(questionForm);
 

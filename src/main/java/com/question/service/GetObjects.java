@@ -18,14 +18,17 @@ public class GetObjects {
 
 	public static Answer getAnswer() {
 		Answer answer = new Answer();
-		answer.setAnswerText("Use two stack to implement to solve the question");
+		answer.setAnswerText(
+				"The number of nodes in each linked list is in the range [1, 100].\r\n" + "0 <= Node.val <= 9\r\n"
+						+ "It is guaranteed that the list represents a number that does not have leading zeros.");
 
 		return answer;
 	}
 
 	public static AnswerComment getAnswerComment() {
 		AnswerComment answer = new AnswerComment();
-		answer.setCommentText("solved using stack data structure");
+		answer.setCommentText("ListNode() {}\r\n" + "     ListNode(int val) { this.val = val; }\r\n"
+				+ "      ListNode(int val, ListNode next) { this.val = val; this.next = next; }");
 		return answer;
 	}
 
@@ -49,7 +52,8 @@ public class GetObjects {
 
 	public static Question getQuestion() {
 		Question question = new Question();
-		question.setQuestionText("Min Stack in O(1) Time");
+		question.setQuestionText(
+				"You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.");
 		return question;
 	}
 

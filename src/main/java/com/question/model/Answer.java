@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Entity
 public class Answer {
@@ -20,6 +22,8 @@ public class Answer {
 	@Column(name = "ANSWER_ID")
 	private Long answerId;
 
+	@Min(value = 50, message = "Min length 50 characters")
+	@Max(value = 500, message = "Max length 500 characters")
 	private String answerText;
 
 	@Column(name = "QUESTION_ID")
@@ -27,14 +31,14 @@ public class Answer {
 
 	@Column(name = "USER_ID")
 	private Long userId;
-	
+
 	@OneToMany(cascade = CascadeType.REMOVE, targetEntity = AnswerComment.class)
 	@JoinColumn(name = "ANSWER_ID")
-	private List<AnswerComment> answerComments=new ArrayList<>();
-	
+	private List<AnswerComment> answerComments = new ArrayList<>();
+
 	@OneToMany(cascade = CascadeType.REMOVE, targetEntity = AnswerLike.class)
 	@JoinColumn(name = "ANSWER_ID")
-	private List<AnswerLike> answerLikes=new ArrayList<>() ;
+	private List<AnswerLike> answerLikes = new ArrayList<>();
 
 	public Long getAnswerId() {
 		return answerId;
@@ -86,6 +90,5 @@ public class Answer {
 				"Answer [answerId=%s, answerText=%s, questionId=%s, userId=%s, answerComments=%s, answerLikes=%s]",
 				answerId, answerText, questionId, userId, answerComments, answerLikes);
 	}
-	
-	
+
 }

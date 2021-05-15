@@ -2,6 +2,8 @@ package com.question.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +19,7 @@ import com.question.service.AnswerService;
 public class AnswerController {
 
 	@PostMapping("/answer")
-	public ResponseEntity<Answer> createAnswer(@RequestBody Answer answer) {
+	public ResponseEntity<Answer> createAnswer( @Valid @RequestBody Answer answer) {
 
 		return answerService.save(answer);
 	}
@@ -34,7 +36,7 @@ public class AnswerController {
 	}
 
 	@PostMapping("/answer/comment")
-	public ResponseEntity<Void> createAnswerComment(@RequestBody AnswerComment answerComment) {
+	public ResponseEntity<Void> createAnswerComment( @Valid @RequestBody AnswerComment answerComment) {
 		return answerService.saveComment(answerComment);
 	}
 
