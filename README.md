@@ -26,7 +26,7 @@ interviews of various companies are being captured.
   <li><strong>Users:</strong> And finally the list of users who is posting Questions/Answers/Likes etc.</li>
 </ul>
 
-##Relation between Database Table
+## Relation between Database Table
  <ul>
       <li>Question and Company -Many to Many</li>
       <li>Question and Tag -Many to Many</li>
@@ -178,7 +178,7 @@ interviews of various companies are being captured.
   </li>
 </ul>
 
-##SPECIFICATIONS
+## SPECIFICATIONS
 	<ul>
 		<li><strong> Model</strong> - Mapping of tables in DB to Java objects</li>
 		<li><strong> DAO </strong>- Defining how to fetch data from DB and map to Java objects</li>
@@ -186,7 +186,7 @@ interviews of various companies are being captured.
 		<li><strong> Controller </strong>- Rest APIs should be defined here</li>
 	</ul>
 	
-##Technology choices
+## Technology choices
 	<ul>
 		<li>Java 11 </li>
 		<li>Spring / Spring Boot </li>
