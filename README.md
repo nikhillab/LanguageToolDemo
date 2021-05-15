@@ -179,18 +179,18 @@ interviews of various companies are being captured.
 </ul>
 
 ## SPECIFICATIONS
-	<ul>
-		<li><strong> Model</strong> - Mapping of tables in DB to Java objects</li>
-		<li><strong> DAO </strong>- Defining how to fetch data from DB and map to Java objects</li>
-		<li><strong>Service </strong>- Business logic</li>
-		<li><strong> Controller </strong>- Rest APIs should be defined here</li>
-	</ul>
+
+	Model - Mapping of tables in DB to Java objects
+	DAO - Defining how to fetch data from DB and map to Java objects
+	Service - Business logic
+	Controller - Rest APIs should be defined here
+	
 	
 ## Technology choices
-	<ul>
-		<li>Java 11 </li>
-		<li>Spring / Spring Boot </li>
-		<li>JPA/Hibernate For ORM </li>
-		<li> Maven  To as a build tool</li>
-		<li> H2 (In Memory DataBase) We can easily connect to any DataBase with minimum changes </li>
-	</ul>
+
+	Java 11 
+	Spring / Spring Boot 
+	JPA/Hibernate For ORM 
+	Maven  To as a build tool
+	H2 (In Memory DataBase) We can easily connect to any DataBase with minimum changes 
+
