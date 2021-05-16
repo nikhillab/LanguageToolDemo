@@ -7,9 +7,10 @@ We need to build backend APIs for a question answer platform, where questions an
 interviews of various companies are being captured. 
 
 
-<h1>Understanding the System</h1>
+## Understanding the System
 
-<h3>ENTITIES </h3>
+### ENTITIES 
+
 <p>This platfrom would have the following high level entities, with following relationship among them. Boradly 1 entity should correspond to 1 table in Database. </p>
 <ul>
   <li><strong>Question:</strong> Core Entity of the platform.</li>
@@ -26,7 +27,37 @@ interviews of various companies are being captured.
   <li><strong>Users:</strong> And finally the list of users who is posting Questions/Answers/Likes etc.</li>
 </ul>
 
+## SPECIFICATIONS
+
+	Controller - Rest APIs should be defined here
+	Service - Business logic
+	DAO - Defining how to fetch data from DB and map to Java objects
+	Model - Mapping of tables in DB to Java objects
+	
+	
+## Technology choices
+
+	Java 11 
+	Spring / Spring Boot
+	JPA/Hibernate For ORM tool
+	Maven as a build tool
+	H2 (InMemory Relational DataBase) We can easily connect to any Relational DataBase with some changes
+
+## DataBase Config
+
+	To open H2 consol 
+		http://localhost:8081/h2
+	UserName=root
+	Password=
+	
+### To change DataSource
+    Go to application.properities file 
+    	spring.datasource.url=YOUR_DATABASE_URL
+    	spring.datasource.username=YOUR_DATABASE_USERNAME
+    	spring.datasource.password=YOUR_DATABASE_PASSWORD
+
 ## Relation between Database Table
+
  <ul>
       <li>Question and Company -Many to Many</li>
       <li>Question and Tag -Many to Many</li>
@@ -40,15 +71,13 @@ interviews of various companies are being captured.
       <li>Topic  and Sub Topic -One to Many</li>
     </ul>
 
-## Various APIs
-<strong>We are going to build following APIs.</strong>
-
 ### API  Documentation
 ```
-	http://localhost:8081/swagger-ui.html#/
+http://localhost:8081/swagger-ui.html#/
 ```
 
-
+## Various APIs
+<strong>We are going to build following APIs.</strong>
 <ul>
   <li><strong>CRUD APIs</strong> for all master data, which includes following entities/tables.
     <ul>
@@ -178,19 +207,7 @@ interviews of various companies are being captured.
   </li>
 </ul>
 
-## SPECIFICATIONS
 
-	Model - Mapping of tables in DB to Java objects
-	DAO - Defining how to fetch data from DB and map to Java objects
-	Service - Business logic
-	Controller - Rest APIs should be defined here
-	
-	
-## Technology choices
 
-	Java 11 
-	Spring / Spring Boot 
-	JPA/Hibernate For ORM 
-	Maven  To as a build tool
-	H2 (In Memory DataBase) We can easily connect to any DataBase with minimum changes 
+	
 
