@@ -11,8 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 @Entity
 public class Answer {
@@ -22,8 +20,6 @@ public class Answer {
 	@Column(name = "ANSWER_ID")
 	private Long answerId;
 
-	@Min(value = 50, message = "Min length 50 characters")
-	@Max(value = 500, message = "Max length 500 characters")
 	private String answerText;
 
 	@Column(name = "QUESTION_ID")

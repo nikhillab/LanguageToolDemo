@@ -3,8 +3,6 @@ package com.question.controller;
 import java.util.Optional;
 import java.util.Set;
 
-import javax.validation.Valid;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,8 +34,15 @@ public class QuestionController {
 	}
 
 	@PostMapping("/question")
-	public ResponseEntity<Question> createQuestion(@Valid @RequestBody QuestionForm questionForm) {
+	public ResponseEntity<Question> createQuestion(@RequestBody QuestionForm questionForm) {
 		// call question service and save it and return id
+		if (questionForm.getQuestionText().length() > 500 || 50 >= questionForm.getQuestionText().length()) {
+			throw new RuntimeException("Question text must be max 500 and min 50");
+		}
+		if (questionForm.getSubTopicId() == 0) {
+			throw new RuntimeException("Sub Topic is Mandatory ");
+
+		}
 		Question save = questionService.saveQuestionForm(questionForm);
 
 		return new ResponseEntity<Question>(save, HttpStatus.OK);

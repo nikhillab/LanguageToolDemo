@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 @Entity
 public class AnswerComment {
@@ -17,8 +15,6 @@ public class AnswerComment {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long commentId;
 
-	@Min(value = 50, message = "Min length 50 characters")
-	@Max(value = 500, message = "Max length 500 characters")
 	private String commentText;
 
 	@Column(name = "USER_ID")

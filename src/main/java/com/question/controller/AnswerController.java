@@ -2,8 +2,6 @@ package com.question.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +17,11 @@ import com.question.service.AnswerService;
 public class AnswerController {
 
 	@PostMapping("/answer")
-	public ResponseEntity<Answer> createAnswer( @Valid @RequestBody Answer answer) {
+	public ResponseEntity<Answer> createAnswer(@RequestBody Answer answer) {
+
+		if (answer.getAnswerText().length() > 500 || answer.getAnswerText().length() < 50) {
+			throw new RuntimeException(". Min length 50 characters, Max length 500 characters");
+		}
 
 		return answerService.save(answer);
 	}
@@ -36,7 +38,10 @@ public class AnswerController {
 	}
 
 	@PostMapping("/answer/comment")
-	public ResponseEntity<Void> createAnswerComment( @Valid @RequestBody AnswerComment answerComment) {
+	public ResponseEntity<Void> createAnswerComment(@RequestBody AnswerComment answerComment) {
+		if (answerComment.getCommentText().length() > 500 || answerComment.getCommentText().length() < 50) {
+			throw new RuntimeException(". Min length 50 characters, Max length 500 characters");
+		}
 		return answerService.saveComment(answerComment);
 	}
 
