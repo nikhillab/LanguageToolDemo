@@ -9,19 +9,16 @@
 		<version>2.4.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.question</groupId>
-	<artifactId>QuestionAnswerPlatform</artifactId>
+	<groupId>com.language</groupId>
+	<artifactId>Language-Tool-POC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>QuestionAnswerPlatform</name>
-	<description>Rest APIs for Question Answer Platform</description>
+	<name>Language Tool</name>
+	<description>Rest APIs Language Tool POC</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>15</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -34,32 +31,9 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-core</artifactId>
-			<version>2.9.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.9.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>7.0.1.Final</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.languagetool</groupId>
+			<artifactId>language-all</artifactId>
+			<version>5.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

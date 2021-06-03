@@ -1,4 +1,4 @@
-package com.question.exception;
+package com.language.exception;
 
 import java.util.Date;
 
