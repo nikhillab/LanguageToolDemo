@@ -17,11 +17,12 @@ List of all language supported by LanguageTool
 	Param int id (for which language)
 ```
 
+### OLD APIS
 Response:
-   fromPos : from where sentence is incorrect
-   toPos: to where sentence is incorrect
-   message : What is the error/any suggestion 
-   List<String> suggestion :suggestion for the correction
+   <li>fromPos : from where sentence is incorrect</li>
+   <li>toPos: to where sentence is incorrect</li>
+   <li>message : What is the error/any suggestion </li>
+   <li>List<String> suggestion :suggestion for the correction</li>
 
 
 
